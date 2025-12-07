@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>나의 첫 번째 웹사이트</title>
+  <style>
+    /* 기본 초기화 */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', '맑은 고딕', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* 헤더 */
+    header {
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    nav h1 { font-size: 1.8rem; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #ffd700; }
+
+    /* 메인 영역 */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
+    .hero h2 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+    .btn {
+      background: #ffd700;
+      color: #333;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: white;
+      transform: scale(1.1);
+    }
+
+    /* 섹션 */
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #about { background: white; }
+    #services { background: #f8f9fa; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-10px); }
+    .card i { font-size: 3rem; color: #667eea; margin-bottom: 20px; }
+
+    /* 푸터 */
+    footer {
+      background: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    /* 반응형 */
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 2.8rem; }
+      .hero p { font-size: 1.2rem; }
+      nav ul { flex-direction: column; gap: 10px; }
+    }
+  </style>
+  <!-- 아이콘 사용을 위해 Font Awesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1>MySite</h1>
+      <ul>
+        <li><a href="#home">홈</a></li>
+        <li><a href="#about">소개</a></li>
+        <li><a href="#services">서비스</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>안녕하세요! <br>멋진 웹사이트에 오신 걸 환영합니다</h2>
+    <p>HTML만으로도 이렇게 예쁜 사이트를 만들 수 있어요!</p>
+    <a href="#about" class="btn">더 알아보기</a>
+  </section>
+
+  <section id="about">
+    <h2 style="text-align:center; margin-bottom:40px;">우리는 누구인가요?</h2>
+    <p style="text-align:center; font-size:1.2rem; max-width:800px; margin:0 auto;">
+      간단한 HTML + CSS만으로도 반응형 웹사이트를 만들 수 있습니다.<br>
+      위 코드를 그대로 복사해서 index.html로 저장한 뒤 더블클릭하면 바로 브라우저에서 확인할 수 있어요!
+    </p>
+  </section>
+
+  <section id="services">
+    <h2 style="text-align:center; margin-bottom:50px;">제공 서비스</h2>
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>웹 개발</h3>
+        <p>HTML, CSS, JavaScript로 멋진 사이트 제작</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-paint-brush"></i>
+        <h3>디자인</h3>
+        <p>트렌디하고 깔끔한 UI/UX 디자인</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>반응형</h3>
+        <p>모바일, 태블릿, PC 모두 완벽 지원</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>© 2025 MySite. All rights reserved.</p>
+    <p>문의: example@email.com</p>
+  </footer>
+
+</body>
+</html>
